@@ -26,4 +26,27 @@ export default defineNuxtConfig({
   future: {
     compatibilityVersion: 4,
   },
+  build: {
+    transpile: ["trpc-nuxt"],
+  },
+
+  app: {
+    head: {
+      meta: [
+        { name: "viewport", content: "width=device-width, initial-scale=1" },
+      ],
+      htmlAttrs: {
+        lang: "es-CL",
+      },
+      charset: "utf-8",
+      viewport: "width=device-width, initial-scale=1",
+      link: [
+        {
+          rel: "icon",
+          type: "image/png",
+          href: "/icon.svg",
+        },
+      ],
+    },
+  },
 });
