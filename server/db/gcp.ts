@@ -1,15 +1,11 @@
-import { Storage } from '@google-cloud/storage'
+import { Storage } from "@google-cloud/storage";
 
 /**
  * En esta ruta debes subir tu archivo json
  */
 const gcpStorage = new Storage({
-  projectId: 'linebox-412716',
-  credentials: {
-    client_email: 'linebox-412716@appspot.gserviceaccount.com',
-    private_key:
-      '-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDh5dGnhgRNpcQ6\nkLjYhU9QgL9/Dd9r3mQRE7fFRe9THKk05cWrJSYpKE/uB+711Uvzta9AEK+mWn+6\nNukXUfJvMjPumtIxngpshgy5dt7MmRjLPnhpRNaMUI+3Cg8eIHW/DmI0t95gKj+e\n8SxyO1JHa4tf5YmajPRpo/uNm5anff1anjGqIYv6MAwDMRou+0XZLsHdfDJPbyBN\nFHkqBSxkz0Mf1iYUjFBJbNIMzcGAMtOEFePBeBGBr243k4DVPpaByvGZsR4rwHTY\nNQYFfz+tbKFXthGR0gRUbs3T/S+w9CFeodeQytbEWVePM2bCpedUPPqku2znOmdO\nBQHuWJelAgMBAAECggEAGQzWtHiQlpm4ynPNA7m4w2kbkzfTHE+jkh85JEeuk+1c\nODD4vBNZCXxebLt1fM5j50kw/246RDzJ6Dj5nSvpsfoDt0R05aqsZj9xPsnXSCH8\nFWG+kZHgJtwyK66SYZlg5UhvjIANSWW1+2asMpiwdZoP8RjvqvNRkTtthFUKHlWN\nbHMcSGzbrM0hSaXt21IazF9CR/tTwVpXlMp7CnahEgeeePoHSvb2TfaPO6x2ONMZ\nZXGCA4fCn3qoWEMe70GAV4sb7hc8HTGvWSHBhGNPtO3RecyPJtwxA08KAdfMlkUj\niLNAicTRomp4bBeWukBggWCZbbgthTuJsNFhGodE4QKBgQDjKW17QMJDqudHIqPH\nyOq6ngdctyn1gFq0VOcM65eZR6rQtQKFuRJG0fKy72AFEqzTOczxpe3aRE0emo5G\nwHGGa5af6TommebV9V5qu31IWoak+AyPPKXKRfibpHSzgXwSE95rxDJzQdlbqmXn\nyHYv0CanzCjyElYVEfn0vd4qlQKBgQD+k08oGZ364PuoXr015IHcCeyrSt0a4W3B\nZ10tOkz48dN/w6o1pHjh9tJEF+Qz1OF9ud1Q98/Qy87GpH1JEu+0GCA5V3HMofAB\nPdtbVRwVFKwGo0If4XsQxby5PmMvF6YSJqW3vocdNZlwoNXHwigm6DYjj/gUK6ra\nlEe2WDeE0QKBgQCnQnaxXQJtDqaSUygiz4Y9+GPVWaxUbrjatPUXJ1UNcJ6OY+lC\niv2xFZ9NL0IVGiYUtSd4+kMDBm1+TjDaWZJ9djSG9BR0HbfA7JUjo39gyf7/8wBU\na0Rrhk/CUjn3fizbprOLx/+Zq++eNf4oxwp2tB3ySToQ2310sDLKiQ7PbQKBgQCF\nYWcKyok0JeaUq7aU4vmK8QQ4Jww7hjr8Jwzxomcr04ANo9WtL1RKiAhYtu/QnEvc\nlKI5Ru1yJyZae1pNDAfdIvrXMFKmdX4LGH6ylqAVB3SuMaF2lKvm+MNNhztuNATF\n48vVvpSKIEgZc5sugzKIWAftkAPZhZuJ1EDSb9v+0QKBgQCvvcEaT1Rgf2Y+3gfP\n+HuxB+f0JbKuicD5XiEE2o6rM6i7dxOFU9WFRMyc/WDx6a6gATIajp3Te9uUUPCn\nxT+FqRUypZSZBTuY6xtWh+WJot4t97y1TNV68b7KRvwAf11HYFQRLDpdlcmVHioW\nTzv6lfPQC+RXaTVMXbpYNDwM9A==\n-----END PRIVATE KEY-----\n',
-  },
-})
+  projectId: "linebox-412716",
+  keyFilename: "server/db/linebox-412716-99194e13da0c.json",
+});
 
-export const gcpBucket = gcpStorage.bucket('linebox-bucket')
+export const gcpBucket = gcpStorage.bucket("linebox-bucket");

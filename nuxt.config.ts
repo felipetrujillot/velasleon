@@ -49,4 +49,16 @@ export default defineNuxtConfig({
       ],
     },
   },
+
+  runtimeConfig: {
+    jwtSecret: process.env.NUXT_JWT_SECRET,
+    dbPassword: process.env.NUXT_DB_PASSWORD || "",
+    dbHost: process.env.NUXT_DB_HOST || "",
+    dbUser: process.env.NUXT_DB_USER || "root",
+    dbName: process.env.NUXT_DB_NAME,
+
+    public: {
+      projectName: process.env.NUXT_PROJECT_NAME,
+    },
+  },
 });

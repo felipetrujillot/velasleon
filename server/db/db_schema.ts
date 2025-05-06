@@ -40,8 +40,11 @@ export const empresas = mySchema.table("empresas", {
  */
 export const productos = mySchema.table("productos", {
   id_producto: int("id_producto").autoincrement().notNull(),
-  nombre_producto: varchar("nombre_producto", { length: 255 }).notNull(),
-  imagen_producto: varchar("imagen_producto", { length: 5000 }).notNull(),
+  nombre: varchar("nombre", { length: 255 }).notNull(),
+  descripcion: varchar("descripcion", {
+    length: 5000,
+  }).notNull(),
+  imagen: varchar("imagen", { length: 5000 }).notNull(),
   precio: int("precio").notNull(),
   activo: int("activo").notNull().default(1),
   created_at: timestamp("created_at").notNull().defaultNow(),
