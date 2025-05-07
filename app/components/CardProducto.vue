@@ -7,12 +7,16 @@ const props = defineProps<{
 </script>
 
 <template>
-  <NuxtLink class="h-full w-full" :to="`/producto/slug`">
-    <div class="cursor-pointer">
-      <img :src="producto.imagen" :alt="producto.nombre" class="w-full" />
+  <NuxtLink :to="`/producto/slug`" class="block w-full">
+    <img
+      :src="producto.imagen"
+      :alt="producto.nombre"
+      class="w-full rounded-md"
+    />
+    <h1 class="capitalize mt-2 font-semibold text-lg">{{ producto.nombre }}</h1>
 
-      <h1 class="capitalize">{{ producto.nombre }}</h1>
-      <h1 class="capitalize">{{ producto.descripcion }}</h1>
-    </div>
+    <p class="slashed-zero tabular-nums text-lg">
+      {{ clpFormat(producto.precio) }}
+    </p>
   </NuxtLink>
 </template>

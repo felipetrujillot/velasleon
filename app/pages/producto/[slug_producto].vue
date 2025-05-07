@@ -4,6 +4,7 @@ definePageMeta({
 });
 
 import { LucideStar } from "lucide-vue-next";
+import type { GetProductos } from "~~/server/trpc/routers/productos";
 
 const route = useRoute();
 
@@ -12,6 +13,12 @@ const slug_producto = route.params.slug_producto as string;
 const { $trpc } = useNuxtApp();
 
 const producto = await $trpc.productos.getProductoSlug.query({ slug_producto });
+const showSheet = useSheet();
+const onPressAddItem = (item: GetProductos[0]) => {
+  addItemToCart(item);
+
+  showSheet.value = true;
+};
 </script>
 
 <template>
@@ -35,18 +42,21 @@ const producto = await $trpc.productos.getProductoSlug.query({ slug_producto });
         <p class="normal-nums text-2xl">
           {{ clpFormat(producto?.precio) }}
         </p>
+        <p class="text-muted-foreground">Precio IVA incl.</p>
 
         <div class="flex gap-1">
-          <LucideStar fill="#111" />
-          <LucideStar fill="#111" />
-          <LucideStar fill="#111" />
-          <LucideStar fill="#111" />
-          <LucideStar fill="#111" />
+          <LucideStar :size="18" fill="#111" />
+          <LucideStar :size="18" fill="#111" />
+          <LucideStar :size="18" fill="#111" />
+          <LucideStar :size="18" fill="#111" />
+          <LucideStar :size="18" fill="#111" />
         </div>
 
         <hr />
 
-        <Button class="w-full">Agregar al carrito</Button>
+        <Button class="w-full" @click.prevent="onPressAddItem(producto)"
+          >Agregar al carrito</Button
+        >
       </div>
     </div>
   </div>
