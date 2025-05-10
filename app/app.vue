@@ -1,15 +1,9 @@
 <script setup lang="ts">
-/* useHead({
+useHead({
   bodyAttrs: {
-    class: 'entel',
+    class: "dark",
   },
-  link: [
-    {
-      rel: 'icon',
-      type: 'image/ico',
-    },
-  ],
-}) */
+});
 </script>
 
 <template>

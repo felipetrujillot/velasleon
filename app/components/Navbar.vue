@@ -8,7 +8,7 @@ const route = useRoute();
 
 <template>
   <div class="h-12 px-4">
-    <div class="min-w-screen fixed top-0 border-b h-12 bg-white">
+    <div class="min-w-screen fixed top-0 border-b h-12 dark:bg-black bg-white">
       <div class="container mx-auto">
         <div class="flex justify-between gap-4 items-center h-12">
           <NuxtLink to="/"> Velas León </NuxtLink>
